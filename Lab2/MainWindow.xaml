@@ -1,0 +1,120 @@
+﻿<Window x:Class="TI2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TI2"
+        mc:Ignorable="d"
+        Title="Lab2"
+        MinHeight="720" MinWidth="1280"
+        FontSize="30"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Content="Исходный текст"
+               VerticalAlignment="Center"/>
+        <Label Grid.Row="0"
+               Grid.Column="1"
+               Content="Зашифрованный текст"
+               VerticalAlignment="Center"/>
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Content="Зашифрованный текст"
+               VerticalAlignment="Center"/>
+        <Label Grid.Row="3"
+               Grid.Column="1"
+               Content="Исходный текст"
+               VerticalAlignment="Center"/>
+        <TextBox Grid.Column="0"
+                     Grid.Row="1"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Visible"
+                     x:Name="SourceText1"
+                     Margin="1"/>
+        <TextBox Grid.Column="1"
+                     Grid.Row="1"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Visible"
+                     x:Name="SourceText2"
+                     Margin="1"/>
+        <TextBox Grid.Column="1"
+                     Grid.Row="4"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Visible"
+                     x:Name="FinalText2"
+                     Margin="1"/>
+        <TextBox Grid.Column="0"
+                     Grid.Row="4"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Visible"
+                     x:Name="FinalText1"
+                     Margin="1"/>
+        <Grid Grid.Row="2"
+              Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                   Content="Key: "
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"/>
+            <Label Grid.Column="2"
+                   Content="Module:"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"/>
+            <TextBox Grid.Column="1"
+                     x:Name="KeyTextBox"
+                     Margin="1"
+                     VerticalAlignment="Center"/>
+            <TextBox Grid.Column="3"
+                     x:Name="ModuleTextBox"
+                     Margin="1"
+                     VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                Content="Анализ"
+                x:Name="analysButton"
+                Click="analysButton_Click"/>
+            <Button Grid.Column="1"
+                    Content="Авто замена"
+                    x:Name="tryHard"
+                    Click="tryHard_Click"/>
+        </Grid>
+        <Button Grid.Column="0"
+                Grid.Row="5"
+                Content="Зашифровать"
+                x:Name="EncButton"
+                Click="EncButton_Click"/>
+        <Button Grid.Column="1"
+                Grid.Row="5"
+                Content="Замена"
+                x:Name="DecButton"
+                Click="DecButton_Click"/>
+        <DataGrid Grid.Row="0" Grid.Column="2"
+                  Grid.RowSpan="6"
+                  CanUserAddRows="False"
+                  x:Name="dataGrid"/>
+    </Grid>
+</Window>
